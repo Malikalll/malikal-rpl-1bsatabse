@@ -103,30 +103,21 @@ if (!$query) {
 
                                 <td>
 
-                                    <div class="d-flex gap-2">
+                                    <a
+        href="edit.php?id=<?= $user['id'] ?>&role=<?= $user['role'] ?>"
+        class="btn btn-warning btn-sm">
+        <i class="bi bi-pencil"></i>
+        Edit
+                                    </a>
 
-                                        <!-- Edit -->
                                         <a
-                                            href="edit.php?id=<?= $user['id']; ?>&page=siswafor.php"
-                                            class="btn btn-sm btn-primary"
-                                            title="Edit"
-                                            aria-label="Edit"
-                                        >
-                                            <i class="bi bi-pencil-square"></i>
+        href="delete.php?id=<?= $user['id'] ?>"
+        class="btn btn-danger btn-sm"
+        onclick="return confirm('Apakah anda yakin ingin menghapus user ini?')"
+    >
+        <i class="bi bi-trash"></i>
+        Hapus
                                         </a>
-
-                                        <!-- Delete -->
-                                        <a
-                                            href="delete.php?id=<?= $user['id']; ?>&page=siswafor.php"
-                                            class="btn btn-sm btn-danger"
-                                            title="Hapus"
-                                            aria-label="Hapus"
-                                            onclick="return confirm('Yakin ingin menghapus data ini?')"
-                                        >
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-
-                                    </div>
 
                                 </td>
 

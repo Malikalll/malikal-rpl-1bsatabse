@@ -85,60 +85,53 @@ if (!$query) {
                         <?php
                         $no = 1;
 
-                        while($user = mysqli_fetch_assoc($query)):
+                        while ($user = mysqli_fetch_assoc($query)):
                         ?>
 
                             <tr>
+
                                 <td>
-                                  <?= $no++ ?>
-                                </td>
-                                  
-                                <td>
-                                  <?php echo $user['username']?>
+                                    <?= $no++ ?>
                                 </td>
 
                                 <td>
-                                  <?php echo $user['nama']?>
-                                </td>
-
-                               <td>
-                                 <?php echo $user['password']?>
-                               </td>
-
-                                <td>
-                                  <?php echo $user['role']?>
+                                    <?= $user['username'] ?>
                                 </td>
 
                                 <td>
-                                  <?php echo $user['created_at']?>
+                                    <?= $user['nama'] ?>
+                                </td>
+
+                                <td>
+                                    <?= $user['password'] ?>
+                                </td>
+
+                                <td>
+                                    <?= $user['role'] ?>
+                                </td>
+
+                                <td>
+                                    <?= $user['created_at'] ?>
                                 </td>
 
                                 <td>
 
-                                    <div class="d-flex gap-2">
+                                    <a
+                                        href="edit.php?id=<?= $user['id'] ?>&role=<?= $user['id'] ?>"
+                                        class="btn btn-warning btn-sm"
+                                    >
+                                        <i class="bi bi-pencil"></i>
+                                        Edit
+                                    </a>
 
-                                        <!-- Edit -->
-                                        <a
-                                            href="edit.php?id=<?= $user['id']; ?>&page=siswafor.php"
-                                            class="btn btn-sm btn-primary"
-                                            title="Edit"
-                                            aria-label="Edit"
-                                        >
-                                            <i class="bi bi-pencil-square"></i>
-                                        </a>
-
-                                        <!-- Delete -->
-                                        <a
-                                            href="delete.php?id=<?= $user['id']; ?>&page=siswafor.php"
-                                            class="btn btn-sm btn-danger"
-                                            title="Hapus"
-                                            aria-label="Hapus"
-                                            onclick="return confirm('Yakin ingin menghapus data ini?')"
-                                        >
-                                            <i class="bi bi-trash"></i>
-                                        </a>
-
-                                    </div>
+                                    <a
+                                        href="delete.php?id=<?= $user['id'] ?>"
+                                        class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Apakah anda yakin ingin menghapus user ini?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Hapus
+                          </a>
 
                                 </td>
 
